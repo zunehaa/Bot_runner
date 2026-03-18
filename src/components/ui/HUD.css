@@ -1,0 +1,155 @@
+/* ============================================================
+   HUD.css — Phase 1
+   Dark-mode neon UI overlay for the in-game HUD.
+   All elements use pointer-events: none so they don't
+   block swipe/click input to the canvas underneath.
+============================================================ */
+
+.hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  pointer-events: none;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* ── Score ────────────────────────────────────────────────── */
+.hud-score {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.hud-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}
+
+.hud-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow:
+    0 0 12px rgba(255, 107, 53, 0.9),
+    0 0 28px rgba(255, 107, 53, 0.4);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+/* ── Coins ────────────────────────────────────────────────── */
+.hud-coins {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 6px 16px 6px 12px;
+}
+
+.coin-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.hud-coins .hud-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-shadow:
+    0 0 10px rgba(255, 213, 79, 0.9),
+    0 0 22px rgba(255, 213, 79, 0.4);
+  color: #ffd54f;
+}
+
+/* ── Speed Bar ────────────────────────────────────────────── */
+.hud-speed {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  min-width: 100px;
+}
+
+.speed-bar {
+  width: 100px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.speed-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #e94560, #ff6b35);
+  border-radius: 99px;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px rgba(233, 69, 96, 0.8);
+}
+
+/* ── Power-up Timer ───────────────────────────────────────── */
+.hud-powerup {
+  position: absolute;
+  top: 90px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.powerup-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #00ff88;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.powerup-timer {
+  width: 140px;
+  height: 4px;
+  background: rgba(0, 255, 136, 0.15);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.powerup-fill {
+  height: 100%;
+  background: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+  transition: width 0.1s linear;
+}
+
+/* ── Paused overlay ───────────────────────────────────────── */
+.hud-paused {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  color: #ffffff;
+  text-shadow:
+    0 0 20px rgba(233, 69, 96, 1),
+    0 0 50px rgba(233, 69, 96, 0.5);
+  pointer-events: none;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}

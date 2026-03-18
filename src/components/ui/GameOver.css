@@ -1,0 +1,136 @@
+/* ============================================================
+   GameOver.css — Phase 1
+============================================================ */
+
+.gameover-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 2, 8, 0.85);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.gameover-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 44px 52px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 24px;
+  box-shadow: 0 0 80px rgba(233, 69, 96, 0.15);
+  animation: cardPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes cardPop {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1);   }
+}
+
+.gameover-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-shadow: 0 0 24px rgba(233, 69, 96, 0.9);
+}
+
+/* ── Score table ──────────────────────────────────────────── */
+.gameover-scores {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.gs-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+}
+
+.gs-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+}
+
+.gs-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.score-main {
+  color: #ff6b35;
+  text-shadow: 0 0 16px rgba(255,107,53,0.8);
+}
+
+.coins-value {
+  color: #ffd54f;
+  text-shadow: 0 0 12px rgba(255,213,79,0.7);
+}
+
+.best-value {
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.gameover-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.go-btn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 48px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.go-retry {
+  background: linear-gradient(135deg, #e94560, #ff6b35);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(233,69,96,0.5);
+}
+
+.go-retry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(233,69,96,0.7);
+}
+
+.confetti-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255,213,79,0.85);
+  letter-spacing: 0.05em;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}

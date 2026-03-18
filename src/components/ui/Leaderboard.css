@@ -1,0 +1,67 @@
+.leaderboard-container {
+  width: 100%;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 20px 0;
+}
+
+.leaderboard-container h3 {
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.lb-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lb-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.lb-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.lb-rank {
+  font-weight: 900;
+  color: #ff6b35;
+  width: 40px;
+}
+
+.lb-name {
+  flex: 1;
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+}
+
+.lb-score {
+  font-weight: 800;
+  color: #00ff88;
+}
+
+.lb-loading, .lb-empty {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+  padding: 20px;
+}
